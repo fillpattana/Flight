@@ -1,21 +1,20 @@
-class Card():
+from abc import ABC, abstractmethod
+
+class Card(ABC):
     
-    def __init__(self, name, balance, pin, bank):
+    def __init__(self, name, balance, pin):
         self.name = name
         self.balance = balance
         self.pin = pin
-        self.bank = bank
-        self.id = 1234
+        self.number = ""
         self.cards = []
 
     def addCard(self, card):
         self.cards.append(card)
-
-
-
-
-
-
+        
+    @abstractmethod
+    def charge(self, amount):
+        pass
 
 
 
@@ -25,4 +24,4 @@ class Card():
 
 if __name__ == '__main__':
     obj1 = Card("ja", "jo", 1, 000, 2)
-    print(obj1.fname)
+    print(obj1.name)

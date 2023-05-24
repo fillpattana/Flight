@@ -8,6 +8,15 @@ class debitCard(Card):
         self.pin = pin
         self.balance = 0
         self.number = ""
+        
+    def getPin(self):
+        return self.pin
+    
+    def getBalance(self):
+        return self.balance
+    
+    def getNumber(self):
+        return self.number
     
     #generate random 6 digit debit card number
     def setNumber(self):
@@ -46,12 +55,12 @@ class debitCard(Card):
 
 if __name__ == '__main__':
     card1 = debitCard("Jackson Blue", "1111")
-    card1.setNumber()
+    # card1.setNumber()
     # print(card1)
     # card1.setNumber()
     # print(card1)
-    card1.topUp(1000)
-    print(card1)
-    card1.charge(-100)
+    # card1.topUp(1000)
+    # print(card1)
+    # card1.charge(1000)
     print(card1)
     

@@ -9,6 +9,18 @@ class creditCard(Card):
         self.credit = 0
         self.limit = 10000
         self.number = ""
+         
+    def getPin(self):
+        return self.pin
+    
+    def getCredit(self):
+        return self.credit
+    
+    def getLimit(self):
+        return self.limit
+    
+    def getNumber(self):
+        return self.number
     
     #generate random 8 digit credit card number
     def setNumber(self):
