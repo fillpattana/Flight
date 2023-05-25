@@ -1,7 +1,7 @@
 from card import Card
 import random
 
-class creditCard(Card):
+class CreditCard(Card):
     
     def __init__(self, name, pin):
         self.name = name
@@ -10,6 +10,9 @@ class creditCard(Card):
         self.limit = 10000
         self.number = ""
          
+    def getName(self):
+        return self.name
+    
     def getPin(self):
         return self.pin
     
@@ -66,7 +69,7 @@ class creditCard(Card):
     
 
 if __name__ == '__main__':
-    card1 = creditCard("Jackson Blue", "1111")
+    card1 = CreditCard("Jackson Blue", "1111")
     card1.setNumber()
     print(card1)
     card1.setNumber()
