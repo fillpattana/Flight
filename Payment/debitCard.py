@@ -1,13 +1,16 @@
 from card import Card
 import random
 
-class debitCard(Card):
+class DebitCard(Card):
     
     def __init__(self, name, pin):
         self.name = name
         self.pin = pin
         self.balance = 0
         self.number = ""
+        
+    def getName(self):
+        return self.name    
         
     def getPin(self):
         return self.pin
@@ -54,7 +57,7 @@ class debitCard(Card):
     
 
 if __name__ == '__main__':
-    card1 = debitCard("Jackson Blue", "1111")
+    card1 = DebitCard("Jackson Blue", "1111")
     # card1.setNumber()
     # print(card1)
     # card1.setNumber()
