@@ -1,41 +1,63 @@
-import airway
+from Airway.airway import *
+from Airplane.boeing777 import *
 
 
 class thaiAirways(airway):
-    destination = ["California", "Arizona", "Bangkok", "Indonesia", "Beijing", "ShiangHai",
-                   "Canada", "Hawaii", "Mexico", "Malaysia", "Japan", "Korea", "Indonesia", "Dubai",
-                   "London", "Paris", "Glasgow", "Switzerland", "Australia"]
+    destination = ["United States", "United Kingdom", "United Arab Emirates", "Ukraine", "Hong Kong", "Turkey",
+                   "Thailand", "Taiwan", "Switzerland", "Spain", "South Africa", "Singapore", "Russia",
+                   "Papua New Guinea", "Pakistan", "Norway", "Nigeria", "New Zealand", "Netherlands", "Morocco",
+                   "Mexico", "Maldives", "Malaysia", "South Korea", "Jordan", "Japan", "Italy", "Indonesia",
+                   "India", "Guinea", "Germany", "France", "Egypt", "Denmark", "Czech Republic", "Cuba",
+                   "Colombia", "China", "Canada", "Cambodia", "Myanmar", "Brazil", "Belgium", "Bangladesh",
+                   "Austria", "Australia", "Argentina", "Afghanistan"]
 
-    departures = ["California", "Bangkok", "Indonesia", "Beijing", "ShiangHai",
-                  "Canada", "Hawaii", "Malaysia", "Japan", "Korea", "Indonesia", "Dubai",
-                  "London", "Paris", "Australia"]
+    def __init__(self):
+        self.planes = boeing777()
+
+    def flyTo(self, country):
+        if country in self.destination:
+            return True
+        else:
+            return False
+
+    def getAirway(self):
+        return "ThaiAirway"
 
     def getDestination(self):
         return self.destination
 
-    def getDeparture(self):
-        return self.departures
-
     def getAirplane(self):
-        pass
+        return self.planes
 
     def getSeats(self):
-        pass
+        return self.planes.getNumSeats()
 
-    def getEconomyPricing(self):
-        pass
+    def getEconomyPricing(self, km):
+        if km <= 1500:
+            return 1.815
+        elif km <= 4500:
+            return 2.325
+        else:
+            return 2.795
 
-    def getBusinessPricing(self):
-        pass
+    def getBusinessPricing(self, km):
+        if km <= 1500:
+            return 2.556
+        elif km <= 4500:
+            return 3.288
+        else:
+            return 4.12
 
-    def getFirstClassPricing(self):
-        pass
-
-    def getCarryOnWeight(self):
-        pass
+    def getFirstClassPricing(self, km):
+        if km <= 1500:
+            return 3.915
+        elif km <= 4500:
+            return 4.125
+        else:
+            return 4.955
 
     def getLoadWeight(self):
-        pass
+        return 30
 
     def allowPets(self):
-        pass
+        return True
