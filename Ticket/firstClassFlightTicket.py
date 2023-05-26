@@ -1,5 +1,7 @@
 from Ticket.flightTicket import *
-
+# import sys
+# sys.path.remove('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
+# from flightTicket import *
 
 class firstFlightTicket(flightTicket):
     def __init__(self, Name, Destination, Departure, Seat, Price, Airway, Time, Date):

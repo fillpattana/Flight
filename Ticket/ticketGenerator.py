@@ -11,6 +11,21 @@ from Airway.thaiAirways import *
 import datetime
 import random
 
+# import sys
+# move = sys.path
+# move.remove('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
+# move.remove('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Airway')
+
+# import flightTicket
+# import firstClassFlightTicket
+# import businessFlightTicket
+# import economyFlightTicket
+# import americanAirway
+# import chinaAirway
+# import emiratesAirway
+# import singaporeAirway
+# import thaiAirways
+
 AmericanAirway = americanAirway()
 ChinaAirway = chinaAirway()
 EmiratesAirway = emiratesAirway()
