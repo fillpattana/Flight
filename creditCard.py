@@ -24,6 +24,9 @@ class CreditCard(Card):
     def getLimit(self):
         return self.limit
 
+    def setLimit(self, limit):
+        self.limit = limit
+
     def getNumber(self):
         return self.number
 
