@@ -1,4 +1,4 @@
-from flightTicket import *
+from Ticket.flightTicket import *
 
 
 class businessFlightTicket(flightTicket):

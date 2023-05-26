@@ -65,19 +65,29 @@ class CreditCard(Card):
         info += "Number: XXXXX" + self.number[5:] + "\n"
         return info
     
-    
-    
-    
 
 if __name__ == '__main__':
-    card1 = CreditCard("Joe Son", 1111)
-    # flightTicket.getPrice()
-    # card1.setNumber()
-    # print(card1)
-    card1.charge(flightTicket.getPrice)
+    # card1 = CreditCard("Joe Son", 1111)
+    # # flightTicket.getPrice()
+    # # card1.setNumber()
+    # # print(card1)
+    # card1.charge(flightTicket.getPrice())
     # print(card1)
     
     # card1.charge(-1)
     # print(card1)
     # card1.payCredit(1000)
     # print(card1)
+
+    name = "Kittiphong Thachaphat"
+    desti = "Bangladesh"
+    depart = "Japan"
+    date = datetime.date(2023, 5, 27)
+    a = getAvailableAirway("Japan", "Bangladesh")
+    tickets = generateBusinessTicket(name, desti, depart, a, date)
+
+    for t in tickets:
+        print(t)
+        print("\n")
+
+

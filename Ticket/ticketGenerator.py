@@ -1,8 +1,8 @@
-from flightTicket import *
-from firstClassFlightTicket import *
-from businessFlightTicket import *
-from economyFlightTicket import *
 # from Airway.test import getAvailableAirway
+from Ticket.flightTicket import *
+from Ticket.firstClassFlightTicket import *
+from Ticket.businessFlightTicket import *
+from Ticket.economyFlightTicket import *
 from Airway.americanAirway import *
 from Airway.chinaAirway import *
 from Airway.emiratesAirway import *
@@ -60,14 +60,14 @@ def generateEconomyTicket(Name, Destination, Departure, Airway, Date):
     pass
 
 
-name = "Kittiphong Thachaphat"
-desti = "Bangladesh"
-depart = "Japan"
-date = datetime.date(2023, 5, 27)
-a = getAvailableAirway("Japan", "Bangladesh")
-tickets = generateBusinessTicket(name, desti, depart, a, date)
-
-for t in tickets:
-    print(t)
-    print("\n")
+# name = "Kittiphong Thachaphat"
+# desti = "Bangladesh"
+# depart = "Japan"
+# date = datetime.date(2023, 5, 27)
+# a = getAvailableAirway("Japan", "Bangladesh")
+# tickets = generateBusinessTicket(name, desti, depart, a, date)
+#
+# for t in tickets:
+#     print(t)
+#     print("\n")
 
