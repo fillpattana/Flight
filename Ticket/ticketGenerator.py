@@ -60,14 +60,14 @@ def generateEconomyTicket(Name, Destination, Departure, Airway, Date):
     pass
 
 
-# name = "Kittiphong Thachaphat"
-# desti = "Bangladesh"
-# depart = "Japan"
-# date = datetime.date(2023, 5, 27)
-# a = getAvailableAirway("Japan", "Bangladesh")
-# tickets = generateBusinessTicket(name, desti, depart, a, date)
-#
-# for t in tickets:
-#     print(t)
-#     print("\n")
+name = "Kittiphong Thachaphat"
+desti = "Bangladesh"
+depart = "Japan"
+date = datetime.date(2023, 5, 27)
+a = getAvailableAirway("Japan", "Bangladesh")
+tickets = generateBusinessTicket(name, desti, depart, a, date)
+
+for t in tickets:
+    print(t)
+    print("\n")
 
