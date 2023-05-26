@@ -2,10 +2,9 @@ from card import Card
 import random
 import datetime
 import sys
-sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
+# sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
 
-from Ticket.ticketGenerator import *
-
+from ticketGenerator import *
 
 class CreditCard(Card):
 
