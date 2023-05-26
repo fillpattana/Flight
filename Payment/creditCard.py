@@ -1,14 +1,11 @@
-# import sys
-# sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/User')
 from card import Card
-from user import CreateUser
 import random
+from Ticket.ticketGenerator import *
 
-
-class CreditCard(Card, CreateUser):
+class CreditCard(Card):
     
-    def __init__(self, name, age, usern, pw, pin):
-        super().__init__(name, age, usern, pw, pin)
+    def __init__(self, name, pin):
+        self.name = name
         self.pin = pin
         self.credit = 0
         self.limit = 10000
@@ -62,8 +59,6 @@ class CreditCard(Card, CreateUser):
     
     def __str__(self):
         info = "Name: " + self.name + "\n"
-        info += "Username: " + self.usern + "\n"
-        info += "Password: " + str(self.pw) + "\n"
         info += "Pin: " + str(self.pin) + "\n"
         info += "Credit: " + str(self.credit) + "\n"
         info += "Limit: " + str(self.limit) + "\n"
@@ -75,13 +70,14 @@ class CreditCard(Card, CreateUser):
     
 
 if __name__ == '__main__':
-    card1 = CreditCard("Jesus", "2023", "ChristForLife", "SexyMary", 777)
-    card1.setNumber()
-    print(card1)
-    card1.setNumber()
-    print(card1)
+    card1 = CreditCard("Joe Son", 1111)
+    # flightTicket.getPrice()
+    # card1.setNumber()
+    # print(card1)
+    card1.charge(flightTicket.getPrice)
+    # print(card1)
+    
     # card1.charge(-1)
     # print(card1)
     # card1.payCredit(1000)
     # print(card1)
-    

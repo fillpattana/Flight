@@ -1,19 +1,19 @@
 from abc import ABC, abstractmethod
-# import sys
+import sys
 # sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/User')
-from user import *
+# # from Ticket.flightTicket import*
+# from User.user import *
 
-class Card(ABC, CreateUser):
+class Card():
     
-    def __init__(self, name, age, usern, pw, pin):
-        super().__init__(name, age, usern, pw)
+    def __init__(self, name, pin):
+        self.name = name
         self.pin = pin
         self.number = ""
         self.cards = []
 
-
     def addCard(self, card):
-        pass    
+        self.cards.append(card)    
         
     def setBalance(self, balance):
         pass
@@ -31,3 +31,5 @@ class Card(ABC, CreateUser):
 if __name__ == '__main__':
     obj1 = Card("ja", 26, "k", "k", 500, 1111)
     print(obj1)
+    
+    

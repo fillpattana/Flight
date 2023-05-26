@@ -1,13 +1,15 @@
 from card import Card
-from user import CreateUser
 import random
+import sys
+sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket.py')
+from Ticket.flightTicket import *
 
-class DebitCard(Card, CreateUser):
+class DebitCard(Card):
     
-    def __init__(self, name, age, usern, pw, pin):
-        super().__init__(name, age, usern, pw, pin)
+    def __init__(self, name, pin, balance):
+        self.name = name
         self.pin = pin
-        self.balance = 0
+        self.balance = balance
         self.number = ""
         
     def getName(self):
@@ -48,8 +50,6 @@ class DebitCard(Card, CreateUser):
     
     def __str__(self):
         info = "Name: " + self.name + "\n"
-        info += "Username: " + self.usern + "\n"
-        info += "Password: " + str(self.pw) + "\n"
         info += "Pin: " + str(self.pin) + "\n"
         info += "Balance: " + str(self.balance) + "\n"
         info += "Number: XXXX" + self.number[4:] + "\n"
@@ -60,6 +60,6 @@ class DebitCard(Card, CreateUser):
     
 
 if __name__ == '__main__':
-    card1 = DebitCard("ja", 22, "k", "i", 11)
+    card1 = DebitCard("jackson ho", 1234, 1000)
     print(card1)
     
