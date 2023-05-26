@@ -1,6 +1,14 @@
 from Airway.airway import *
 from Airplane.airbusA380 import *
 
+# import sys
+# sys.path.remove('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Airway')
+# sys.path.remove('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Airplane')
+# from airway import *
+# from airbusA380 import *
+
+
+
 
 class americanAirway(airway):
     destination = ["United States", "United Kingdom", "Ukraine",
