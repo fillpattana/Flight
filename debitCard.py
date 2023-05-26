@@ -18,6 +18,9 @@ class DebitCard(Card):
     
     def getNumber(self):
         return self.number
+
+    def setBalance(self, balance):
+        self.balance = balance
     
     #charging debit card
     def charge(self, amount):

@@ -17,6 +17,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QLineEdit,
     QPushButton, QSizePolicy, QWidget)
+from customer import customer
+import sys
+from PySide6.QtWidgets import *
+from PySide6.QtCore import *
+from PySide6.QtGui import *
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -29,9 +34,12 @@ class Ui_Form(object):
         font = QFont()
         font.setPointSize(16)
         self.label.setFont(font)
+
         self.selectCard = QComboBox(Form)
+        # self.selectCard.addItems(customer1.getCards())
         self.selectCard.setObjectName(u"selectCard")
         self.selectCard.setGeometry(QRect(130, 20, 181, 32))
+
         self.label_2 = QLabel(Form)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(30, 100, 91, 16))
@@ -62,4 +70,20 @@ class Ui_Form(object):
         self.enterPin.setText("")
         self.BuyTicket.setText(QCoreApplication.translate("Form", u"CONFIRM", None))
     # retranslateUi
+
+
+from ctest import *
+
+class BuyTicketWindow(QWidget):
+    def __init__(self):
+        QWidget.__init__(self, None)
+        self.ui = Ui_Form()
+        self.ui.setupUi(self)
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    w = BuyTicketWindow()
+    w.show()
+    sys.exit(app.exec_())
 

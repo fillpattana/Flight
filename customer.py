@@ -30,6 +30,9 @@ class customer(CreateUser):
     # def getDebitCard(self, i):
     #     return self.debitCard[i]
 
-    def getCard(self, i):
-        return self.cards[i]
+    def getCards(self):
+        return self.cards
 
+    def cardsToString(self):
+        for cards in self.cards:
+            print(cards)
