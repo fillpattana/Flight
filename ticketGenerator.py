@@ -126,13 +126,13 @@ def generateTicket(passengerName, destination, departure, daydate, classtype):
     return tickets
 
 
-name = "Kittiphong Thachaphat"
-desti = "Thailand"
-depart = "Japan"
-date = datetime.date(2023, 5, 27)
-tickettype = "Economy"
-tic = generateTicket(name, desti, depart, date, tickettype)
-
-for t in tic:
-    print(t)
-    print("\n")
+# name = "Kittiphong Thachaphat"
+# desti = "Thailand"
+# depart = "Japan"
+# date = datetime.date(2023, 5, 27)
+# tickettype = "Economy"
+# tic = generateTicket(name, desti, depart, date, tickettype)
+#
+# for t in tic:
+#     print(t)
+#     print("\n")

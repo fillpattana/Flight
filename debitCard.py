@@ -1,16 +1,12 @@
 from card import Card
-import random
-import sys
-sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket.py')
 
 
 class DebitCard(Card):
     
     def __init__(self, name, pin, balance):
-        self.name = name
-        self.pin = pin
+        super().__init__(name, pin)
         self.balance = balance
-        self.number = ""
+        self.number = self.setNumber()
         
     def getName(self):
         return self.name    
@@ -23,16 +19,6 @@ class DebitCard(Card):
     
     def getNumber(self):
         return self.number
-    
-    #generate random 6 digit debit card number
-    def setNumber(self):
-        num = ""
-        if len(self.number) == 0:
-            for i in range(6):
-                num += str(random.randint(1, 9))
-            self.number = num
-        else:
-            print("debit card number already exists.\n")
     
     #charging debit card
     def charge(self, amount):
@@ -52,7 +38,7 @@ class DebitCard(Card):
         info = "Name: " + self.name + "\n"
         info += "Pin: " + str(self.pin) + "\n"
         info += "Balance: " + str(self.balance) + "\n"
-        info += "Number: XXXX" + self.number[4:] + "\n"
+        info += "Number: XXXXX" + self.number[5:] + "\n"
         return info
     
     
