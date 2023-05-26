@@ -7,19 +7,12 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
-
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
 
 
-class Ui_Form(object):
+class Ui_BookingPage(object):
     destination = ["United States", "United Kingdom", "United Arab Emirates", "Ukraine", "Hong Kong", "Turkey",
                    "Thailand", "Taiwan", "Switzerland", "Spain", "South Africa", "Singapore", "Russia",
                    "Papua New Guinea", "Pakistan", "Norway", "Nigeria", "New Zealand", "Netherlands", "Morocco",
@@ -29,6 +22,9 @@ class Ui_Form(object):
                    "Austria", "Australia", "Argentina", "Afghanistan"]
 
     classTicket = ["Business", "FirstClass", "Economy"]
+
+    currentDate = QDateTime.currentDateTime()
+
 
     def setupUi(self, Form):
         if not Form.objectName():
@@ -55,6 +51,7 @@ class Ui_Form(object):
         self.dateEdit = QDateEdit(Form)
         self.dateEdit.setObjectName(u"dateEdit")
         self.dateEdit.setGeometry(QRect(480, 20, 110, 22))
+        self.dateEdit.setDateTime(self.currentDate)
 
         self.dropdow_tickettype = QComboBox(Form)
         self.dropdow_tickettype.addItems(self.classTicket)
@@ -65,12 +62,14 @@ class Ui_Form(object):
         self.viewBookings = QPushButton(Form)
         self.viewBookings.setObjectName(u"viewBookings")
         self.viewBookings.setGeometry(QRect(10, 170, 171, 51))
+
         self.GenerateTicks = QPushButton(Form)
         self.GenerateTicks.setObjectName(u"GenerateTicks")
         self.GenerateTicks.setGeometry(QRect(450, 60, 141, 41))
         font1 = QFont()
         font1.setPointSize(17)
         self.GenerateTicks.setFont(font1)
+
         self.pushButton = QPushButton(Form)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(10, 130, 131, 32))
@@ -96,3 +95,15 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"go back to login", None))
         self.pushButton_4.setText(QCoreApplication.translate("Form", u"go to ticket select", None))
     # retranslateUi
+
+
+if __name__ == '__main__':
+    import sys
+    app = QApplication(sys.argv)
+    bookingPage = QMainWindow()
+    w = Ui_BookingPage()
+    w.setupUi(bookingPage)
+    bookingPage.show()
+    sys.exit(app.exec_())
+
+    

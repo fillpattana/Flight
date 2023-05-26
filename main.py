@@ -1,16 +1,56 @@
-# This is a sample Python script.
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
+import sys
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from BookingWindow import Ui_BookingPage
+from PurchaseWindow import Ui_PurchasePage
+from RegisterWindow import Ui_RegisterPage
+from LoginWindow import Ui_LoginPage
+from HistoryWindow import Ui_HistoryPage
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+class Ui_loginPage(QMainWindow):
+    def changeToRegister(self):
+        widget.setCurrentWidget(registerPage)
 
 
-# Press the green button in the gutter to run the script.
+class Ui_registerPage(QMainWindow):
+    pass
+
+
+class Ui_bookingPage(QMainWindow):
+    pass
+
+
+class Ui_paymentPage(QMainWindow):
+    pass
+
+
+class Ui_buyTicketPage(QMainWindow):
+    pass
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    app = QApplication(sys.argv)
+    widget = QStackedWidget()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    loginPage = QMainWindow()
+    w1 = Ui_LoginPage()
+    w1.setupUi(loginPage)
+    widget.addWidget(loginPage)
+
+    registerPage = QMainWindow()
+    w2 = Ui_RegisterPage()
+    w2.setupUi(registerPage)
+    widget.addWidget(registerPage)
+
+    widget.setCurrentWidget(loginPage)
+
+    widget.setFixedHeight(700)
+    widget.setFixedWidth(700)
+    widget.show()
+    app.exec_()
+
+
+

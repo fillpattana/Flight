@@ -8,17 +8,11 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QLabel, QLineEdit, QPushButton,
-    QSizePolicy, QWidget)
+from PySide6.QtCore import *
+from PySide6.QtGui import *
+from PySide6.QtWidgets import *
 
-class Ui_Form(object):
+class Ui_LoginPage(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
@@ -47,9 +41,11 @@ class Ui_Form(object):
         font1 = QFont()
         font1.setPointSize(24)
         self.loginButton.setFont(font1)
+
         self.registerButton = QPushButton(Form)
         self.registerButton.setObjectName(u"registerButton")
         self.registerButton.setGeometry(QRect(90, 290, 351, 41))
+
         self.label_a = QLabel(Form)
         self.label_a.setObjectName(u"label_a")
         self.label_a.setGeometry(QRect(90, 270, 351, 20))
@@ -72,3 +68,13 @@ class Ui_Form(object):
         self.goToBooking.setText(QCoreApplication.translate("Form", u"go to Booking", None))
     # retranslateUi
 
+
+
+if __name__ == '__main__':
+    import sys
+    app = QApplication(sys.argv)
+    loginPage = QMainWindow()
+    w = Ui_LoginPage()
+    w.setupUi(loginPage)
+    loginPage.show()
+    sys.exit(app.exec_())
