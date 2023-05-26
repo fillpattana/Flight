@@ -10,7 +10,7 @@ class CreditCard(Card):
         self.pin = pin
         self.credit = 0
         self.limit = 10000
-        self.number = ""
+        self.number = self.setNumber()
 
     def getName(self):
         return self.name
@@ -33,13 +33,7 @@ class CreditCard(Card):
         if len(self.number) == 0:
             for i in range(8):
                 num += str(random.randint(1, 9))
-            self.number = num
-        else:
-            print("credit card number already exists.\n")
-
-    # just in case limit's too low
-    def setLimit(self, num):
-        self.limit = num
+            return num
 
     # charging credit card
     def charge(self, amount):
