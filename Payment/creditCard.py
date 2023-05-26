@@ -4,7 +4,7 @@ import datetime
 import sys
 # sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
 
-from ticketGenerator import *
+from Ticket.ticketGenerator import *
 
 class CreditCard(Card):
 
