@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'designerJThosg.ui'
+## Form generated from reading UI file 'designerXjbDJV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -53,6 +53,9 @@ class Ui_Form(object):
         self.label_a = QLabel(Form)
         self.label_a.setObjectName(u"label_a")
         self.label_a.setGeometry(QRect(90, 270, 351, 20))
+        self.goToBooking = QPushButton(Form)
+        self.goToBooking.setObjectName(u"goToBooking")
+        self.goToBooking.setGeometry(QRect(400, 380, 100, 32))
 
         self.retranslateUi(Form)
 
@@ -66,5 +69,6 @@ class Ui_Form(object):
         self.loginButton.setText(QCoreApplication.translate("Form", u"Login", None))
         self.registerButton.setText(QCoreApplication.translate("Form", u"Register", None))
         self.label_a.setText(QCoreApplication.translate("Form", u"dont have an account?", None))
+        self.goToBooking.setText(QCoreApplication.translate("Form", u"go to Booking", None))
     # retranslateUi
 
