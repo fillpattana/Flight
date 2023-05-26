@@ -8,7 +8,9 @@ def buyTicket(ticket, cust, i):
     if isinstance(cust.cards[i], CreditCard) and cust.cards[i].getLimit() > ticket.getPrice():
         cust.cards[i].getLimit() - ticket.getPrice()
         cust.addTicket(ticket)
-        print(cust.getTicket().__str__())
+        for ticks in cust.getTicket():
+            print("Ticket Bought")
+            print(ticks)
     elif isinstance(cust.cards[i], DebitCard) and cust.cards[i].getBalance() > ticket.getPrice():
         cust.cards[i].getBalance() - ticket.getPrice()
         cust.addTicket(ticket)
