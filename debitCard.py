@@ -1,6 +1,5 @@
 from card import Card
 
-
 class DebitCard(Card):
     
     def __init__(self, name, pin, balance):
@@ -40,12 +39,4 @@ class DebitCard(Card):
         info += "Balance: " + str(self.balance) + "\n"
         info += "Number: XXXXX" + self.number[5:] + "\n"
         return info
-    
-    
-    
-    
-
-if __name__ == '__main__':
-    card1 = DebitCard("jackson ho", 1234, 1000)
-    print(card1)
     

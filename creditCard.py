@@ -24,16 +24,11 @@ class CreditCard(Card):
     def getLimit(self):
         return self.limit
 
+    def setLimit(self, limit):
+        self.limit = limit
+
     def getNumber(self):
         return self.number
-
-    # # generate random 8 digit credit card number
-    # def setNumber(self):
-    #     num = ""
-    #     if len(self.number) == 0:
-    #         for i in range(8):
-    #             num += str(random.randint(1, 9))
-    #         return num
 
     # charging credit card
     def charge(self, amount):
@@ -59,30 +54,3 @@ class CreditCard(Card):
         info += "Limit: " + str(self.limit) + "\n"
         info += "Number: XXXXX" + self.number[5:] + "\n"
         return info
-
-
-if __name__ == '__main__':
-    pass
-    # card1 = CreditCard("Joe Son", 1111)
-    # # flightTicket.getPrice()
-    # # card1.setNumber()
-    # # print(card1)
-    # print(card1)
-
-    # card1.charge(-1)
-    # print(card1)
-    # card1.payCredit(1000)
-    # print(card1)
-
-    # name = "Kittiphong Thachaphat"
-    # desti = "Bangladesh"
-    # depart = "Japan"
-    # date = datetime.date(2023, 5, 27)
-    # a = getAvailableAirway("Japan", "Bangladesh")
-    # tickets = generateBusinessTicket(name, desti, depart, a, date)
-    #
-    # for t in tickets:
-    #     print(t)
-    #     print("\n")
-    #
-    # print("\n")
