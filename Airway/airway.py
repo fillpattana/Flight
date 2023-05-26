@@ -5,6 +5,7 @@ from geopy import distance
 
 class airway(ABC):
     # df = pd.read_csv("/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Airway/concap.csv")
+    df = pd.read_csv("/Users/r13_2014/Desktop/Flight/Airway/concap.csv")
     df.rename(columns={"CountryName": "Country", "CapitalName": "capital", "CapitalLatitude": "lat",
                        "CapitalLongitude": "lon", "CountryCode": "code", "ContinentName": "continent"}, inplace=True)
 
