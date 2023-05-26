@@ -1,10 +1,14 @@
+# import sys
+# sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/User')
 from card import Card
+from user import CreateUser
 import random
 
-class CreditCard(Card):
+
+class CreditCard(Card, CreateUser):
     
-    def __init__(self, name, pin):
-        self.name = name
+    def __init__(self, name, age, usern, pw, pin):
+        super().__init__(name, age, usern, pw, pin)
         self.pin = pin
         self.credit = 0
         self.limit = 10000
@@ -35,7 +39,7 @@ class CreditCard(Card):
         else:
             print("credit card number already exists.\n")
         
-    #if limit is too low
+    #just in case limit's too low
     def setLimit(self, num):
         self.limit = num
     
@@ -58,7 +62,9 @@ class CreditCard(Card):
     
     def __str__(self):
         info = "Name: " + self.name + "\n"
-        info += "Pin: " + self.pin + "\n"
+        info += "Username: " + self.usern + "\n"
+        info += "Password: " + str(self.pw) + "\n"
+        info += "Pin: " + str(self.pin) + "\n"
         info += "Credit: " + str(self.credit) + "\n"
         info += "Limit: " + str(self.limit) + "\n"
         info += "Number: XXXXX" + self.number[5:] + "\n"
@@ -69,7 +75,7 @@ class CreditCard(Card):
     
 
 if __name__ == '__main__':
-    card1 = CreditCard("Jackson Blue", "1111")
+    card1 = CreditCard("Jesus", "2023", "ChristForLife", "SexyMary", 777)
     card1.setNumber()
     print(card1)
     card1.setNumber()

@@ -1,10 +1,11 @@
 from card import Card
+from user import CreateUser
 import random
 
-class DebitCard(Card):
+class DebitCard(Card, CreateUser):
     
-    def __init__(self, name, pin):
-        self.name = name
+    def __init__(self, name, age, usern, pw, pin):
+        super().__init__(name, age, usern, pw, pin)
         self.pin = pin
         self.balance = 0
         self.number = ""
@@ -47,7 +48,9 @@ class DebitCard(Card):
     
     def __str__(self):
         info = "Name: " + self.name + "\n"
-        info += "Pin: " + self.pin + "\n"
+        info += "Username: " + self.usern + "\n"
+        info += "Password: " + str(self.pw) + "\n"
+        info += "Pin: " + str(self.pin) + "\n"
         info += "Balance: " + str(self.balance) + "\n"
         info += "Number: XXXX" + self.number[4:] + "\n"
         return info
@@ -57,13 +60,6 @@ class DebitCard(Card):
     
 
 if __name__ == '__main__':
-    card1 = DebitCard("Jackson Blue", "1111")
-    # card1.setNumber()
-    # print(card1)
-    # card1.setNumber()
-    # print(card1)
-    # card1.topUp(1000)
-    # print(card1)
-    # card1.charge(1000)
+    card1 = DebitCard("ja", 22, "k", "i", 11)
     print(card1)
     

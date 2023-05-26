@@ -13,10 +13,10 @@ connection = db.open()
 root = connection.root
 
 # Create an instance of CreditCard
-card1 = CreditCard("Jackson Blue", "1111")
+card1 = DebitCard("ja", 22, "k", "i", 11)
 card1.setNumber()
 
-card2 = DebitCard("Malisa Brown", "2222")
+card2 = CreditCard("Jesus", "2023", "ChristForLife", "SexyMary", 777)
 card2.setNumber()
 
 # Create a dictionary attribute in the root CreditCard to store the card and print status
@@ -49,9 +49,8 @@ def create_dict_debit(card):
         print()
 
 
-create_dict_credit(card1)       
-create_dict_debit(card2) 
-
+create_dict_credit(card2)       
+create_dict_debit(card1) 
 
 # Close the connection
 connection.close()
