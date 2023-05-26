@@ -7,7 +7,7 @@ class americanAirway(airway):
                    "Thailand", "Taiwan", "Switzerland", "Spain", "South Africa", "Singapore",
                    "Papua New Guinea", "Norway", "Nigeria", "New Zealand", "Netherlands", "Morocco",
                    "Mexico", "Maldives", "Malaysia", "South Korea", "Jordan", "Japan", "Italy", "Indonesia",
-                   "India", "Germany", "France",  "Denmark", "Czech Republic", "Cuba",
+                   "India", "Germany", "France", "Denmark", "Czech Republic", "Cuba",
                    "Colombia", "China", "Canada", "Cambodia", "Myanmar", "Brazil", "Belgium",
                    "Austria", "Australia", "Argentina"]
 
@@ -31,7 +31,6 @@ class americanAirway(airway):
 
     def getSeats(self):
         return self.planes.getNumSeats()
-
 
     def getEconomyPricing(self, km):
         if km <= 1500:
@@ -63,9 +62,7 @@ class americanAirway(airway):
     def allowPets(self):
         return True
 
-
 # a = americanAirway()
 # d1 = "Thailand"
 # d2 = "Cambodia"
 # print(a.getDistance(d1, d2))
-

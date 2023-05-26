@@ -53,21 +53,72 @@ def generateBusinessTicket(Name, Destination, Departure, Airway, Date):
 
 
 def generateFirstClassTicket(Name, Destination, Departure, Airway, Date):
-    pass
+    ticket = []
+    for air in Airway:
+        dist = air.getDistance(Destination, Departure)
+        pricing = air.getFirstClassPricing(dist)
+        dateDifference = Date.day - datetime.datetime.now().day
+        if dateDifference <= 3:
+            datePremium = random.uniform(1.65, 1.85)
+        elif dateDifference <= 10:
+            datePremium = random.uniform(1.35, 1.45)
+        else:
+            datePremium = random.uniform(1.10, 1.375)
+
+        TicketPrice = round(datePremium * (dist * pricing))
+        seat = air.getSeats()
+        m = random.randint(0, 60)
+        h = random.randint(0, 23)
+        ts = f'{h}:{m}'
+        obj = firstFlightTicket(Name, Destination, Departure, seat, TicketPrice, air.getAirway(), ts, Date)
+        ticket.append(obj)
+
+    return ticket
 
 
 def generateEconomyTicket(Name, Destination, Departure, Airway, Date):
-    pass
+    ticket = []
+    for air in Airway:
+        dist = air.getDistance(Destination, Departure)
+        pricing = air.getEconomyPricing(dist)
+        dateDifference = Date.day - datetime.datetime.now().day
+        if dateDifference <= 3:
+            datePremium = random.uniform(1.315, 1.525)
+        elif dateDifference <= 10:
+            datePremium = random.uniform(1.015, 1.125)
+        else:
+            datePremium = random.uniform(1.05, 1.075)
+
+        TicketPrice = round(datePremium * (dist * pricing))
+        seat = air.getSeats()
+        m = random.randint(0, 60)
+        h = random.randint(0, 24)
+        ts = f'{h}:{m}'
+        obj = economyFlightTicket(Name, Destination, Departure, seat, TicketPrice, air.getAirway(), ts, Date)
+        ticket.append(obj)
+
+    return ticket
+
+
+def generateTicket(passengerName, destination, departure, daydate, classtype):
+    availableAirway = getAvailableAirway(departure, destination)
+    if classtype == "Business":
+        tickets = generateBusinessTicket(passengerName, destination, departure, availableAirway, daydate)
+    elif classtype == "FirstClass":
+        tickets = generateFirstClassTicket(passengerName, destination, departure, availableAirway, daydate)
+    else:
+        tickets = generateEconomyTicket(passengerName, destination, departure, availableAirway, daydate)
+
+    return tickets
 
 
 name = "Kittiphong Thachaphat"
-desti = "Bangladesh"
+desti = "Thailand"
 depart = "Japan"
 date = datetime.date(2023, 5, 27)
-a = getAvailableAirway("Japan", "Bangladesh")
-tickets = generateBusinessTicket(name, desti, depart, a, date)
+tickettype = "Economy"
+tic = generateTicket(name, desti, depart, date, tickettype)
 
-for t in tickets:
+for t in tic:
     print(t)
     print("\n")
-

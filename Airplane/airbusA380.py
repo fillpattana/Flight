@@ -1,6 +1,7 @@
 from Airplane.plane import plane
 import random
 
+
 class airbusA380(plane):
     def __init__(self):
         self.wingSpan = 80
@@ -25,7 +26,6 @@ class airbusA380(plane):
         row = random.randint(1, rows)
         seat = alphabet[random.randint(0, 8)]
         return str(str(row) + seat)
-
 
     def getModel(self):
         return self.model
