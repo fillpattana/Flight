@@ -18,31 +18,50 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QPushButton,
     QSizePolicy, QWidget)
 
+
 class Ui_Form(object):
+    destination = ["United States", "United Kingdom", "United Arab Emirates", "Ukraine", "Hong Kong", "Turkey",
+                   "Thailand", "Taiwan", "Switzerland", "Spain", "South Africa", "Singapore", "Russia",
+                   "Papua New Guinea", "Pakistan", "Norway", "Nigeria", "New Zealand", "Netherlands", "Morocco",
+                   "Mexico", "Maldives", "Malaysia", "South Korea", "Jordan", "Japan", "Italy", "Indonesia",
+                   "India", "Guinea", "Germany", "France", "Egypt", "Denmark", "Czech Republic", "Cuba",
+                   "Colombia", "China", "Canada", "Cambodia", "Myanmar", "Brazil", "Belgium", "Bangladesh",
+                   "Austria", "Australia", "Argentina", "Afghanistan"]
+
+    classTicket = ["Business", "FirstClass", "Economy"]
+
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
         Form.resize(617, 227)
+
+        sortedDestination = sorted(self.destination)
         self.dropdown_departure = QComboBox(Form)
-        self.dropdown_departure.addItem("")
+        self.dropdown_departure.addItems(sortedDestination)
         self.dropdown_departure.setObjectName(u"dropdown_departure")
         self.dropdown_departure.setGeometry(QRect(20, 20, 141, 32))
+
         font = QFont()
         font.setPointSize(15)
+
         self.dropdown_departure.setFont(font)
+
         self.dropdown_destination = QComboBox(Form)
-        self.dropdown_destination.addItem("")
+        self.dropdown_destination.addItems(sortedDestination)
         self.dropdown_destination.setObjectName(u"dropdown_destination")
         self.dropdown_destination.setGeometry(QRect(170, 20, 141, 32))
         self.dropdown_destination.setFont(font)
+
         self.dateEdit = QDateEdit(Form)
         self.dateEdit.setObjectName(u"dateEdit")
         self.dateEdit.setGeometry(QRect(480, 20, 110, 22))
+
         self.dropdow_tickettype = QComboBox(Form)
-        self.dropdow_tickettype.addItem("")
+        self.dropdow_tickettype.addItems(self.classTicket)
         self.dropdow_tickettype.setObjectName(u"dropdow_tickettype")
         self.dropdow_tickettype.setGeometry(QRect(320, 20, 141, 32))
         self.dropdow_tickettype.setFont(font)
+
         self.viewBookings = QPushButton(Form)
         self.viewBookings.setObjectName(u"viewBookings")
         self.viewBookings.setGeometry(QRect(10, 170, 171, 51))
@@ -77,4 +96,3 @@ class Ui_Form(object):
         self.pushButton.setText(QCoreApplication.translate("Form", u"go back to login", None))
         self.pushButton_4.setText(QCoreApplication.translate("Form", u"go to ticket select", None))
     # retranslateUi
-
