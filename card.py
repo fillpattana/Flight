@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
-import sys
-# sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/User')
-# # from Ticket.flightTicket import*
-# from User.user import *
+import random
 
 class Card():
     
@@ -21,15 +18,26 @@ class Card():
     def setPin(self, pin):
         pass
         
-    def setNumber(self, number):
-        pass
+    def setNumber(self):
+        num = ""
+        if len(self.number) == 0:
+            for i in range(8):
+                num += str(random.randint(1, 9))
+            return num
         
     def charge(self, amount):
         pass
 
+    def setCard(self):
+        num = ""
+        if len(self.number) == 0:
+            for i in range(8):
+                num += str(random.randint(1, 9))
+            return num
+
 
 if __name__ == '__main__':
-    obj1 = Card("ja", 26, "k", "k", 500, 1111)
+    obj1 = Card("ja", 26)
     print(obj1)
     
     

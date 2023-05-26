@@ -3,13 +3,13 @@ from card import Card
 
 from ticketGenerator import *
 
+
 class CreditCard(Card):
 
     def __init__(self, name, pin):
-        self.name = name
-        self.pin = pin
+        super().__init__(name, pin)
         self.credit = 0
-        self.limit = 10000
+        self.limit = 100000
         self.number = self.setNumber()
 
     def getName(self):
@@ -27,13 +27,13 @@ class CreditCard(Card):
     def getNumber(self):
         return self.number
 
-    # generate random 8 digit credit card number
-    def setNumber(self):
-        num = ""
-        if len(self.number) == 0:
-            for i in range(8):
-                num += str(random.randint(1, 9))
-            return num
+    # # generate random 8 digit credit card number
+    # def setNumber(self):
+    #     num = ""
+    #     if len(self.number) == 0:
+    #         for i in range(8):
+    #             num += str(random.randint(1, 9))
+    #         return num
 
     # charging credit card
     def charge(self, amount):
@@ -62,11 +62,11 @@ class CreditCard(Card):
 
 
 if __name__ == '__main__':
+    pass
     # card1 = CreditCard("Joe Son", 1111)
     # # flightTicket.getPrice()
     # # card1.setNumber()
     # # print(card1)
-    # card1.charge(flightTicket.getPrice())
     # print(card1)
 
     # card1.charge(-1)
@@ -74,15 +74,15 @@ if __name__ == '__main__':
     # card1.payCredit(1000)
     # print(card1)
 
-    name = "Kittiphong Thachaphat"
-    desti = "Bangladesh"
-    depart = "Japan"
-    date = datetime.date(2023, 5, 27)
-    a = getAvailableAirway("Japan", "Bangladesh")
-    tickets = generateBusinessTicket(name, desti, depart, a, date)
-
-    for t in tickets:
-        print(t)
-        print("\n")
-
-    print("\n")
+    # name = "Kittiphong Thachaphat"
+    # desti = "Bangladesh"
+    # depart = "Japan"
+    # date = datetime.date(2023, 5, 27)
+    # a = getAvailableAirway("Japan", "Bangladesh")
+    # tickets = generateBusinessTicket(name, desti, depart, a, date)
+    #
+    # for t in tickets:
+    #     print(t)
+    #     print("\n")
+    #
+    # print("\n")
