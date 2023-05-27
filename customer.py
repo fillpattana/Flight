@@ -1,7 +1,7 @@
 from user import *
 
 
-class customer(CreateUser):
+class Customer(CreateUser):
     def __init__(self, name, age, usern, pw):
         super().__init__(name, age, usern, pw)
         self.ticketBought = []

@@ -1,10 +1,11 @@
 from card import Card
 
+
 class DebitCard(Card):
     
-    def __init__(self, name, pin, balance):
+    def __init__(self, name, pin):
         super().__init__(name, pin)
-        self.balance = balance
+        self.balance = 200000
         self.number = self.setNumber()
         
     def getName(self):
