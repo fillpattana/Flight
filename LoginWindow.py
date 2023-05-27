@@ -12,6 +12,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
+
 class Ui_LoginPage(object):
     def setupUi(self, Form):
         if not Form.objectName():
@@ -67,7 +68,6 @@ class Ui_LoginPage(object):
         self.label_a.setText(QCoreApplication.translate("Form", u"dont have an account?", None))
         self.goToBooking.setText(QCoreApplication.translate("Form", u"go to Booking", None))
     # retranslateUi
-
 
 
 if __name__ == '__main__':
