@@ -1,7 +1,4 @@
 from card import Card
-# sys.path.append('/Users/akararatpattanamontri/Documents/FlightSEP/Flight/Ticket')
-
-from ticketGenerator import *
 
 
 class CreditCard(Card):

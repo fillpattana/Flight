@@ -40,7 +40,7 @@ def buyTicket(ticket, cust, i):
 # a = getAvailableAirway("Japan", "Bangladesh")
 # tickets = generateBusinessTicket(name, desti, depart, a, date)
 
-customer1 = customer("Indiana Jay", 87, "jaja", "jeje")
+customer1 = Customer("Indiana Jay", 87, "jaja", "jeje")
 card1 = CreditCard(customer1.getName(), 1111)
 
 card2 = DebitCard(customer1.getName(), 1234, 200000)
@@ -59,25 +59,25 @@ customer1.addCards(card2)
 # buyTicket(tickets[pos], customer1, 1)
 
 
-def saveFile(fn, data):
-    with open(f'load/{fn}.pickle', 'wb') as file:
-        print(fn+" saved ")
-        pickle.dump(data, file)
-
-
-def loadFile(fn):
-    with open(f'load/{fn}.pickle', 'rb') as file:
-        return pickle.load(file)
-
-
-pickled_cust1 = pickle.dumps(customer1)
-unpickled_cust1 = pickle.loads(pickled_cust1)
+# def saveFile(fn, data):
+#     with open(f'load/{fn}.pickle', 'wb') as file:
+#         print(fn+" saved ")
+#         pickle.dump(data, file)
 #
-# customer1.cardsToString()
-
-# print(customer1.getCards())
-
-# print(f"\n{pickled_cust1}\n")
-print(f"\n{unpickled_cust1.getCards()}\n")
+#
+# def loadFile(fn):
+#     with open(f'load/{fn}.pickle', 'rb') as file:
+#         return pickle.load(file)
+#
+#
+# pickled_cust1 = pickle.dumps(customer1)
+# unpickled_cust1 = pickle.loads(pickled_cust1)
+# #
+# # customer1.cardsToString()
+#
+# # print(customer1.getCards())
+#
+# # print(f"\n{pickled_cust1}\n")
+# print(f"\n{unpickled_cust1.getCards()}\n")
 
 
