@@ -55,7 +55,6 @@ if __name__ == '__main__':
     historyWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
 
 
-
     def abcdee():
         desti = bookingWindow.ui.dropdown_destination.currentText()
         depart = bookingWindow.ui.dropdown_departure.currentText()
