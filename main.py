@@ -71,11 +71,6 @@ if __name__ == '__main__':
         username = loginPage.ui.username_input.text()
         password = loginPage.ui.password_input.text()
         LoginWindow().VerifyLogin(username, password)
-
-
-        # username = loginPage.ui.username_input.text()
-        # password = loginPage.ui.password_input.text()
-        # test = LoginWindow.VerifyLogin(LoginWindow(), username, password)
         widget.setCurrentWidget(bookingWindow)
 
     loginPage.ui.loginButton.clicked.connect(LoginToApp)

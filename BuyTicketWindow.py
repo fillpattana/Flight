@@ -35,8 +35,10 @@ class Ui_BuyWindow(object):
         font.setPointSize(16)
         self.label.setFont(font)
 
+
         self.selectCard = QComboBox(Form)
-        # self.selectCard.addItems(customer1.getCards())
+        cardsChoose = ["Select A Card", "1", "2", "3", "4", "5"]
+        self.selectCard.addItems(cardsChoose)
         self.selectCard.setObjectName(u"selectCard")
         self.selectCard.setGeometry(QRect(130, 20, 181, 32))
 
@@ -82,8 +84,11 @@ class Ui_BuyWindow(object):
 
 
 if __name__ == '__main__':
+    import sys
     app = QApplication(sys.argv)
-    w = BuyTicketWindow()
-    w.show()
+    buyWindowPage = QMainWindow()
+    w = Ui_BuyWindow
+    w.setupUi(buyWindowPage)
+    buyWindowPage.show()
     sys.exit(app.exec_())
 
