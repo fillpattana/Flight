@@ -42,7 +42,6 @@ if __name__ == '__main__':
     widget.setFixedWidth(750)
     widget.show()
 
-
     loginPage.ui.registerButton.clicked.connect(lambda : widget.setCurrentWidget(registerPage))
 
     registerPage.ui.goToLogin.clicked.connect(lambda : widget.setCurrentWidget(loginPage))
@@ -117,8 +116,6 @@ if __name__ == '__main__':
     registerPage.ui.addDebitCard.clicked.connect(information)
 
 #login to go to booking page
-
-
 
     app.exec_()
 
