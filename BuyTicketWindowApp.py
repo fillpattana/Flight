@@ -11,4 +11,6 @@ class BuyTicketWindow(QWidget):
         self.ui = Ui_BuyWindow()
         self.ui.setupUi(self)
 
+    
+
 
