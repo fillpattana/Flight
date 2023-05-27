@@ -36,3 +36,12 @@ class Customer(CreateUser):
     def cardsToString(self):
         for cards in self.cards:
             print(cards)
+
+    def __str__(self):
+        info = "Username: " + self.usern + "\n"
+        info += "Name: " + self.name + "\n"
+        info += "Age: " + str(self.age) + "\n"
+        info += "Password: " + str(self.pw) + "\n"
+        info += "Tickets Bought: " + str(self.ticketBought) + "\n"
+        info += "Cards: " + str(self.cards) + "\n"
+        return info

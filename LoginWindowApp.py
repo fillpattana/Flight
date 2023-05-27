@@ -1,4 +1,5 @@
 from LoginWindow import *
+from LoginFunc import *
 
 
 class LoginWindow(QWidget):
@@ -6,4 +7,16 @@ class LoginWindow(QWidget):
         super().__init__()
         self.ui = Ui_LoginPage()
         self.ui.setupUi(self)
+
+    def VerifyLogin(self, un, pw):
+        check = login(un, pw)
+        popup = QErrorMessage()
+        if not check:
+            popup.showMessage("invalid username or password")
+            popup.exec_()
+            raise SystemExit
+
+
+
+
 
