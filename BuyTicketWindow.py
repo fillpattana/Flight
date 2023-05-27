@@ -52,9 +52,11 @@ class Ui_BuyWindow(object):
         font1 = QFont()
         font1.setPointSize(20)
         self.enterPin.setFont(font1)
+
         self.BuyTicket = QPushButton(Form)
         self.BuyTicket.setObjectName(u"BuyTicket")
         self.BuyTicket.setGeometry(QRect(30, 210, 141, 51))
+
         font2 = QFont()
         font2.setPointSize(18)
         font2.setBold(True)
