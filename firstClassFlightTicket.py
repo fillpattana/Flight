@@ -12,7 +12,8 @@ class firstFlightTicket(flightTicket):
         return self.seatClass
 
     def __str__(self):
-        return ("Passenger Name : " + str(self.name) + " | Passenger Ticket : " + str(self.airway) + "\n" +
-                "Seat : " + str(self.seat) + " | Class : " + str(self.seatClass) + "\n" +
-                "Departure : " + str(self.departure) + " | Destination : " + str(self.destination) + "\n"
-                "Time : " + str(self.time) + " | Date : " + str(self.date) + " | Price : " + str(self.price))
+        return ("Passenger Ticket :\t" + str(self.airway) + "\n" + "\nPassenger Name :\t" + str(self.name) +
+                "\nSeat :\t" + str(self.seat) + "\tClass :\t" + str(self.seatClass) + "\n" +
+                "Departure :\t\t" + str(self.departure) + "\nDestination :\t\t" + str(self.destination) + "\n"
+                                                                                                          "Time :\t" + str(
+                    self.time) + "\tDate :\t" + str(self.date) + "\nPrice :\t\t" + str(self.price))

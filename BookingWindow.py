@@ -19,9 +19,9 @@ class Ui_BookingPage(object):
                    "Mexico", "Maldives", "Malaysia", "South Korea", "Jordan", "Japan", "Italy", "Indonesia",
                    "India", "Guinea", "Germany", "France", "Egypt", "Denmark", "Czech Republic", "Cuba",
                    "Colombia", "China", "Canada", "Cambodia", "Myanmar", "Brazil", "Belgium", "Bangladesh",
-                   "Austria", "Australia", "Argentina", "Afghanistan"]
+                   "Austria", "Australia", "Argentina", "Afghanistan", "A"]
 
-    classTicket = ["Business", "FirstClass", "Economy"]
+    classTicket = ["None", "Business", "FirstClass", "Economy"]
 
     currentDate = QDateTime.currentDateTime()
 

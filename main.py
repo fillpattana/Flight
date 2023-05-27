@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     purchaseWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
     purchaseWindow.ui.goNext.clicked.connect(lambda : widget.setCurrentWidget(buyWindow))
-    
+
     historyWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
 
 
@@ -60,10 +60,8 @@ if __name__ == '__main__':
         desti = bookingWindow.ui.dropdown_destination.currentText()
         depart = bookingWindow.ui.dropdown_departure.currentText()
         tT = bookingWindow.ui.dropdow_tickettype.currentText()
-        time = bookingWindow.ui.dateEdit.dateTime()
-        print(time)
-
-        purchaseWindow.parameter()
+        time = bookingWindow.ui.dateEdit.date()
+        purchaseWindow.parameter(desti, depart, tT, time)
         widget.setCurrentWidget(purchaseWindow)
 
 
