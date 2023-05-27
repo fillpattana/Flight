@@ -8,6 +8,7 @@ from PurchaseWindow import Ui_PurchasePage
 from RegisterWindow import Ui_RegisterPage
 from LoginWindow import Ui_LoginPage
 from HistoryWindow import Ui_HistoryPage
+from BookingWindow import Ui_BookingPage
 
 
 class Ui_loginPage(QMainWindow):
@@ -44,6 +45,7 @@ if __name__ == '__main__':
     w2 = Ui_RegisterPage()
     w2.setupUi(registerPage)
     widget.addWidget(registerPage)
+
 
     widget.setCurrentWidget(loginPage)
 
