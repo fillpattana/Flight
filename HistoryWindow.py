@@ -12,6 +12,7 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 
+
 class Ui_HistoryPage(object):
     def setupUi(self, Form):
         if not Form.objectName():
@@ -27,12 +28,12 @@ class Ui_HistoryPage(object):
         self.BookingsLabel.setObjectName(u"BookingsLabel")
         self.BookingsLabel.setGeometry(QRect(10, 40, 461, 321))
         self.BookingsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(10, 330, 100, 32))
-        self.pushButton_2 = QPushButton(Form)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-        self.pushButton_2.setGeometry(QRect(370, 330, 100, 32))
+        self.goBack = QPushButton(Form)
+        self.goBack.setObjectName(u"pushButton")
+        self.goBack.setGeometry(QRect(10, 330, 100, 32))
+        self.goNext = QPushButton(Form)
+        self.goNext.setObjectName(u"pushButton_2")
+        self.goNext.setGeometry(QRect(370, 330, 100, 32))
 
         self.retranslateUi(Form)
 
@@ -43,8 +44,8 @@ class Ui_HistoryPage(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"Your Bookings:", None))
         self.BookingsLabel.setText(QCoreApplication.translate("Form", u"BOOKINGS PRINT HERE", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"goback", None))
-        self.pushButton_2.setText(QCoreApplication.translate("Form", u"gonext", None))
+        self.goBack.setText(QCoreApplication.translate("Form", u"goback", None))
+        self.goNext.setText(QCoreApplication.translate("Form", u"gonext", None))
     # retranslateUi
 
 

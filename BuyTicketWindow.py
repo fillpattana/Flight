@@ -17,13 +17,13 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QLabel, QLineEdit,
     QPushButton, QSizePolicy, QWidget)
-from customer import customer
+
 import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 
-class Ui_Form(object):
+class Ui_BuyWindow(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
@@ -72,13 +72,13 @@ class Ui_Form(object):
     # retranslateUi
 
 
-from ctest import *
+# from ctest import *
 
-class BuyTicketWindow(QWidget):
-    def __init__(self):
-        QWidget.__init__(self, None)
-        self.ui = Ui_Form()
-        self.ui.setupUi(self)
+# class BuyTicketWindow(QWidget):
+#     def __init__(self):
+#         QWidget.__init__(self, None)
+#         self.ui = Ui_Form()
+#         self.ui.setupUi(self)
 
 
 if __name__ == '__main__':

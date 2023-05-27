@@ -58,12 +58,12 @@ class Ui_PurchasePage(object):
         self.payTick5 = QPushButton(Form)
         self.payTick5.setObjectName(u"payTick5")
         self.payTick5.setGeometry(QRect(250, 600, 100, 32))
-        self.pushButton_6 = QPushButton(Form)
-        self.pushButton_6.setObjectName(u"pushButton_6")
-        self.pushButton_6.setGeometry(QRect(10, 640, 100, 32))
-        self.pushButton_7 = QPushButton(Form)
-        self.pushButton_7.setObjectName(u"pushButton_7")
-        self.pushButton_7.setGeometry(QRect(630, 640, 100, 32))
+        self.goBack = QPushButton(Form)
+        self.goBack.setObjectName(u"pushButton_6")
+        self.goBack.setGeometry(QRect(10, 640, 100, 32))
+        self.goNext = QPushButton(Form)
+        self.goNext.setObjectName(u"pushButton_7")
+        self.goNext.setGeometry(QRect(630, 640, 100, 32))
 
         self.retranslateUi(Form)
 
@@ -82,8 +82,8 @@ class Ui_PurchasePage(object):
         self.payTick4.setText(QCoreApplication.translate("Form", u"PURCHASE", None))
         self.payTick3.setText(QCoreApplication.translate("Form", u"PURCHASE", None))
         self.payTick5.setText(QCoreApplication.translate("Form", u"PURCHASE", None))
-        self.pushButton_6.setText(QCoreApplication.translate("Form", u"goback", None))
-        self.pushButton_7.setText(QCoreApplication.translate("Form", u"gonext", None))
+        self.goBack.setText(QCoreApplication.translate("Form", u"goback", None))
+        self.goNext.setText(QCoreApplication.translate("Form", u"gonext", None))
     # retranslateUi
 
 

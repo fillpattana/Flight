@@ -7,6 +7,8 @@ from bookingWindowApp import *
 from registerWindowApp import *
 from purchasedWindowApp import *
 from LoginWindowApp import *
+from BuyTicketWindowApp import *
+from historyWindowApp import *
 
 
 if __name__ == '__main__':
@@ -25,14 +27,32 @@ if __name__ == '__main__':
     purchaseWindow = purchasedWindow()
     widget.addWidget(purchaseWindow)
 
+    buyWindow = BuyTicketWindow()
+    widget.addWidget(buyWindow)
+
+    historyWindow = historyWindow()
+    widget.addWidget(historyWindow)
+
     widget.setCurrentWidget(loginPage)
 
     widget.setFixedHeight(700)
-    widget.setFixedWidth(700)
+    widget.setFixedWidth(750)
     widget.show()
 
     loginPage.ui.registerButton.clicked.connect(lambda : widget.setCurrentWidget(registerPage))
     loginPage.ui.loginButton.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
+
+    registerPage.ui.goToLogin.clicked.connect(lambda : widget.setCurrentWidget(loginPage))
+    registerPage.ui.gobacktologin.clicked.connect(lambda: widget.setCurrentWidget(loginPage))
+
+    bookingWindow.ui.goToLogin.clicked.connect(lambda : widget.setCurrentWidget(loginPage))
+    bookingWindow.ui.goToTicketSelect.clicked.connect(lambda : widget.setCurrentWidget(purchaseWindow))
+    bookingWindow.ui.viewBookings.clicked.connect(lambda : widget.setCurrentWidget(historyWindow))
+
+    purchaseWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
+    purchaseWindow.ui.goNext.clicked.connect(lambda : widget.setCurrentWidget(buyWindow))
+    
+    historyWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
 
 
 

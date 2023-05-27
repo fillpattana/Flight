@@ -70,12 +70,12 @@ class Ui_BookingPage(object):
         font1.setPointSize(17)
         self.GenerateTicks.setFont(font1)
 
-        self.pushButton = QPushButton(Form)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setGeometry(QRect(10, 130, 131, 32))
-        self.pushButton_4 = QPushButton(Form)
-        self.pushButton_4.setObjectName(u"pushButton_4")
-        self.pushButton_4.setGeometry(QRect(470, 130, 131, 32))
+        self.goToLogin = QPushButton(Form)
+        self.goToLogin.setObjectName(u"pushButton")
+        self.goToLogin.setGeometry(QRect(10, 130, 131, 32))
+        self.goToTicketSelect = QPushButton(Form)
+        self.goToTicketSelect.setObjectName(u"pushButton_4")
+        self.goToTicketSelect.setGeometry(QRect(470, 130, 131, 32))
 
         self.retranslateUi(Form)
 
@@ -92,8 +92,8 @@ class Ui_BookingPage(object):
 
         self.viewBookings.setText(QCoreApplication.translate("Form", u"View My Bookings", None))
         self.GenerateTicks.setText(QCoreApplication.translate("Form", u"Find Tickets", None))
-        self.pushButton.setText(QCoreApplication.translate("Form", u"go back to login", None))
-        self.pushButton_4.setText(QCoreApplication.translate("Form", u"go to ticket select", None))
+        self.goToLogin.setText(QCoreApplication.translate("Form", u"go back to login", None))
+        self.goToTicketSelect.setText(QCoreApplication.translate("Form", u"go to ticket select", None))
     # retranslateUi
 
 

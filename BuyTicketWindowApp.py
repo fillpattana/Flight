@@ -2,20 +2,13 @@ import sys
 from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
-from BuyTicketWindow import Ui_Form
+from BuyTicketWindow import Ui_BuyWindow
 
 
 class BuyTicketWindow(QWidget):
     def __init__(self):
         QWidget.__init__(self, None)
-        self.ui = Ui_Form()
+        self.ui = Ui_BuyWindow()
         self.ui.setupUi(self)
 
 
-
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    w = BuyTicketWindow()
-    w.show()
-    sys.exit(app.exec_())
