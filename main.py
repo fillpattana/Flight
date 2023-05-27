@@ -15,6 +15,7 @@ from historyWindowApp import *
 
 
 if __name__ == '__main__':
+    ticketNow = ["1", "2", "3", "4", "5"]
     app = QApplication(sys.argv)
     widget = QStackedWidget()
 
@@ -56,16 +57,42 @@ if __name__ == '__main__':
 
     historyWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
 
-
     def abcdee():
         desti = bookingWindow.ui.dropdown_destination.currentText()
         depart = bookingWindow.ui.dropdown_departure.currentText()
         tT = bookingWindow.ui.dropdow_tickettype.currentText()
         time = bookingWindow.ui.dateEdit.date()
-        purchaseWindow.parameter(desti, depart, tT, time)
+        global ticketNow
+        ticketNow = purchaseWindow.parameter(desti, depart, tT, time)
         widget.setCurrentWidget(purchaseWindow)
 
     bookingWindow.ui.GenerateTicks.clicked.connect(abcdee)
+
+    def payTicket1():
+        tick = ticketNow[0]
+        purchaseWindow.confirm(tick)
+
+    def payTicket2():
+        tick = ticketNow[1]
+        purchaseWindow.confirm(tick)
+
+    def payTicket3():
+        tick = ticketNow[2]
+        purchaseWindow.confirm(tick)
+
+    def payTicket4():
+        tick = ticketNow[3]
+        purchaseWindow.confirm(tick)
+
+    def payTicket5():
+        tick = ticketNow[4]
+        purchaseWindow.confirm(tick)
+
+    purchaseWindow.ui.payTick1.clicked.connect(payTicket1)
+    purchaseWindow.ui.payTick2.clicked.connect(payTicket2)
+    purchaseWindow.ui.payTick3.clicked.connect(payTicket3)
+    purchaseWindow.ui.payTick4.clicked.connect(payTicket4)
+    purchaseWindow.ui.payTick5.clicked.connect(payTicket5)
 
     def LoginToApp():
         username = loginPage.ui.username_input.text()

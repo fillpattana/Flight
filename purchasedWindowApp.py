@@ -34,6 +34,22 @@ class purchasedWindow(QWidget):
             self.ui.ticket4.setText(tickets[3].__str__())
             self.ui.ticket5.setText(tickets[4].__str__())
 
+        return tickets
+
+    def confirm(self, ticket):
+        qm = QMessageBox()
+        text = "Are you sure this is the ticket you want to purchase?\n" + ticket.__str__()
+        qm.setText(text)
+        qm.setStandardButtons(QMessageBox.StandardButton.Yes |
+                              QMessageBox.StandardButton.No)
+        x = qm.exec_()
+
+        if x == QMessageBox.StandardButton.Yes.value:
+            return ticket
+
+        else:
+            return
+
 
 
 
