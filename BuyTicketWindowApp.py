@@ -3,6 +3,7 @@ from PySide6.QtWidgets import *
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from BuyTicketWindow import Ui_BuyWindow
+from LoginFunc import *
 
 
 class BuyTicketWindow(QWidget):
@@ -10,5 +11,9 @@ class BuyTicketWindow(QWidget):
         QWidget.__init__(self, None)
         self.ui = Ui_BuyWindow()
         self.ui.setupUi(self)
+
+
+    def confirmPay(self):
+        pass
 
 
