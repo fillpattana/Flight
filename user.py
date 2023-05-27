@@ -30,6 +30,7 @@ class CreateUser():
         info += "User Name: \t" + self.usern + "\n"
         info += "Password: \t" + str(self.pw) + "\n"
         return info
+
     
 if __name__ == '__main__':
     user1 = CreateUser("Jackson Blue", 25, "k", "kk")

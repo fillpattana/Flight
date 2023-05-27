@@ -82,6 +82,9 @@ class Ui_RegisterPage(object):
         self.debit_pin.setObjectName(u"debit_pin")
         self.debit_pin.setGeometry(QRect(160, 330, 421, 31))
         self.debit_pin.setFont(font)
+        self.addUser = QPushButton(Form)
+        self.addUser.setObjectName(u"addUser")
+        self.addUser.setGeometry(QRect(480, 185, 101, 51))
         self.addDebitCard = QPushButton(Form)
         self.addDebitCard.setObjectName(u"addDebitCard")
         self.addDebitCard.setGeometry(QRect(480, 360, 101, 51))
@@ -119,6 +122,7 @@ class Ui_RegisterPage(object):
         self.debit_pin.setText("")
         self.addDebitCard.setText(QCoreApplication.translate("Form", u"ADD", None))
         self.addCreditCard.setText(QCoreApplication.translate("Form", u"ADD", None))
+        self.addUser.setText(QCoreApplication.translate("Form", u"Create", None))
         self.goToLogin.setText(QCoreApplication.translate("Form", u"Sign in", None))
         self.gobacktologin.setText(QCoreApplication.translate("Form", u"go back to login", None))
     # retranslateUi

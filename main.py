@@ -1,7 +1,10 @@
+from PySide6 import QtCore
 from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 import sys
+
+from LoginFunc import *
 
 from bookingWindowApp import *
 from registerWindowApp import *
@@ -39,8 +42,8 @@ if __name__ == '__main__':
     widget.setFixedWidth(750)
     widget.show()
 
+
     loginPage.ui.registerButton.clicked.connect(lambda : widget.setCurrentWidget(registerPage))
-    loginPage.ui.loginButton.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
 
     registerPage.ui.goToLogin.clicked.connect(lambda : widget.setCurrentWidget(loginPage))
     registerPage.ui.gobacktologin.clicked.connect(lambda: widget.setCurrentWidget(loginPage))
@@ -63,9 +66,57 @@ if __name__ == '__main__':
         purchaseWindow.parameter(desti, depart, tT, time)
         widget.setCurrentWidget(purchaseWindow)
 
-
     bookingWindow.ui.GenerateTicks.clicked.connect(abcdee)
 
+    def LoginToApp():
+        username = loginPage.ui.username_input.text()
+        password = loginPage.ui.password_input.text()
+        LoginWindow().VerifyLogin(username, password)
+
+
+        # username = loginPage.ui.username_input.text()
+        # password = loginPage.ui.password_input.text()
+        # test = LoginWindow.VerifyLogin(LoginWindow(), username, password)
+        widget.setCurrentWidget(bookingWindow)
+
+    loginPage.ui.loginButton.clicked.connect(LoginToApp)
+
+# add user button
+    def registerUser():
+        name = registerPage.ui.regis_name_input.text()
+        age = registerPage.ui.regis_age_input.text()
+        username = registerPage.ui.regis_user_input.text()
+        password = registerPage.ui.regis_pw_input.text()
+        registerWindow.addNewUser(registerWindow(), username, password, name, age)
+
+# print info
+    def information():
+        registerWindow.infos(registerWindow())
+
+    registerPage.ui.addUser.clicked.connect(registerUser)
+    registerPage.ui.addUser.clicked.connect(information)
+
+# add a credit card
+    def registerCredit():
+        cpin = registerPage.ui.credit_pin.text()
+        username = registerPage.ui.regis_user_input.text()
+        name = registerPage.ui.regis_name_input.text()
+        registerWindow.addCredit(registerWindow(), username, "creditCard", name, cpin)
+
+    registerPage.ui.addCreditCard.clicked.connect(registerCredit)
+    registerPage.ui.addCreditCard.clicked.connect(information)
+
+# add a debit card
+    def registerDebit():
+        dpin = registerPage.ui.debit_pin.text()
+        username = registerPage.ui.regis_user_input.text()
+        name = registerPage.ui.regis_name_input.text()
+        registerWindow.addDebit(registerWindow(), username, "debitCard", name, dpin)
+
+    registerPage.ui.addDebitCard.clicked.connect(registerDebit)
+    registerPage.ui.addDebitCard.clicked.connect(information)
+
+#login to go to booking page
 
 
 

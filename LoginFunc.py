@@ -22,7 +22,7 @@ def register_user(username, password, name, age):
         pickle.dump(users, file)
 
     print("Registration successful.")
-
+    return new_customer
 
 def create_card(username, card_type, name, pin):
     try:
@@ -61,14 +61,34 @@ def login(username, password):
             users = pickle.load(file)
     except FileNotFoundError:
         print("No registered users.")
-        return
 
     if username in users:
         user = users[username]
         if user.pw == password:
-            print("Login successful.")
-            return
-    print("Invalid username or password.")
+            print("Login successful.\n")
+            return user
+    print("invalid input")
+    return False
+
+
+
+def get_user_attribute(user, attribute_name):
+    if isinstance(user, Customer):
+        if hasattr(user, attribute_name):
+            attribute_value = getattr(user, attribute_name)
+            if isinstance(attribute_value, list):
+                print(f"\n{attribute_name}:\n")
+                for value in attribute_value:
+                    print(value)
+                    print()
+            else:
+                print(f"{attribute_name}: {attribute_value}")
+            return attribute_value
+        else:
+            print(f"Attribute '{attribute_name}' does not exist for the user.")
+    else:
+        print("Invalid user object.")
+    return None
 
 
 def print_user_data():
@@ -89,10 +109,15 @@ def print_user_data():
                 print(card)
                 print()
 
+# name = "kuy"
+# username = "hee"
+# password = "kwai"
+#
+# # Register a user
+# register_user(username, password, name, 25)
+#
+# # Create a card for the registered user
+# create_card(username, "creditCard", name, 1234)
+#
+# print_user_data()
 
-# Example usage
-register_user("user1", "password123", "John Doe", 25)
-create_card("user1", "creditCard", "John Doe", 1234)
-create_card("user1", "debitCard", "John Doe", 4321)
-login("user1", "password123")
-print_user_data()
