@@ -14,8 +14,9 @@ class LoginWindow(QWidget):
         if not check:
             popup.showMessage("invalid username or password")
             popup.exec_()
-            raise SystemExit
-
+            return True
+        else:
+            return check
 
 
 

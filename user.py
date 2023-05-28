@@ -5,7 +5,11 @@ class CreateUser():
         self.age = age
         self.usern = usern
         self.pw = pw
-        
+        self.ticketBought = []
+
+    def getTicket(self):
+        return self.ticketBought
+
     def getName(self):
         return self.name
     

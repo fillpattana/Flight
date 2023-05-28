@@ -12,8 +12,8 @@ class purchasedWindow(QWidget):
         self.ui = Ui_PurchasePage()
         self.ui.setupUi(self)
 
-    def parameter(self, destination, departure, ticketType, date):
-        passengerName = "Kittiphong Thachaphat"  # TODO Get name from customer object
+    def parameter(self, destination, departure, ticketType, date, customer):
+        passengerName = customer.getName()  # TODO Get name from customer object
         day = date.day()
         year = date.year()
         month = date.month()

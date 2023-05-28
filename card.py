@@ -1,4 +1,3 @@
-from abc import ABC, abstractmethod
 import random
 
 class Card():
@@ -7,10 +6,6 @@ class Card():
         self.name = name
         self.pin = pin
         self.number = ""
-        self.cards = []
-
-    def addCard(self, card):
-        self.cards.append(card)    
         
     def setBalance(self, balance):
         pass
@@ -35,9 +30,4 @@ class Card():
                 num += str(random.randint(1, 9))
             return num
 
-
-if __name__ == '__main__':
-    obj1 = Card("ja", 26)
-    print(obj1)
-    
     

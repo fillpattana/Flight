@@ -90,7 +90,7 @@ class Ui_BookingPage(object):
 
         self.dropdow_tickettype.setItemText(0, QCoreApplication.translate("Form", u"Ticket Type", None))
 
-        self.viewBookings.setText(QCoreApplication.translate("Form", u"View My Bookings", None))
+        self.viewBookings.setText(QCoreApplication.translate("Form", u"Bookings History", None))
         self.GenerateTicks.setText(QCoreApplication.translate("Form", u"Find Tickets", None))
         self.goToLogin.setText(QCoreApplication.translate("Form", u"go back to login", None))
         self.goToTicketSelect.setText(QCoreApplication.translate("Form", u"go to ticket select", None))

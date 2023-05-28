@@ -8,3 +8,7 @@ class historyWindow(QWidget):
         super().__init__()
         self.ui = Ui_HistoryPage()
         self.ui.setupUi(self)
+
+    def showBookings(self, user):
+        for tickets in user.getTicket():
+            self.ui.BookingsLabel.setText(tickets.__str__())

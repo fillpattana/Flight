@@ -3,9 +3,6 @@ from PySide6.QtCore import *
 from PySide6.QtGui import *
 from PySide6.QtWidgets import *
 import sys
-
-from LoginFunc import *
-
 from bookingWindowApp import *
 from registerWindowApp import *
 from purchasedWindowApp import *
@@ -54,7 +51,6 @@ if __name__ == '__main__':
 
     bookingWindow.ui.goToLogin.clicked.connect(lambda : widget.setCurrentWidget(loginPage))
     bookingWindow.ui.goToTicketSelect.clicked.connect(lambda : widget.setCurrentWidget(purchaseWindow))
-    bookingWindow.ui.viewBookings.clicked.connect(lambda : widget.setCurrentWidget(historyWindow))
 
     purchaseWindow.ui.goBack.clicked.connect(lambda : widget.setCurrentWidget(bookingWindow))
     purchaseWindow.ui.goNext.clicked.connect(lambda : widget.setCurrentWidget(buyWindow))
@@ -67,11 +63,9 @@ if __name__ == '__main__':
         depart = bookingWindow.ui.dropdown_departure.currentText()
         tT = bookingWindow.ui.dropdow_tickettype.currentText()
         time = bookingWindow.ui.dateEdit.date()
-
-        User__overide = "hui"
-
+        user = NowLoginCustomer
         global ticketNow
-        ticketNow = purchaseWindow.parameter(desti, depart, tT, time)
+        ticketNow = purchaseWindow.parameter(desti, depart, tT, time, user)
         widget.setCurrentWidget(purchaseWindow)
 
     bookingWindow.ui.GenerateTicks.clicked.connect(abcdee)
@@ -114,19 +108,58 @@ if __name__ == '__main__':
     purchaseWindow.ui.payTick5.clicked.connect(payTicket5)
 
     def buy():
-        #TODO // Implementation of buying
+        pin = buyWindow.ui.enterPin.text()
         buyPrice = selectedTicket.getPrice()
-        print(buyPrice)
+        user = NowLoginCustomer
+        i = buyWindow.ui.selectCard.currentText()
+        cards = get_user_attribute(user, "cards")
+        t = get_user_attribute(user, "ticketBought")
+        selectedcard = cards[int(i)-1]
+        cardlim = selectedcard.getBalance()
+        cardbal = selectedcard.getBalance()
+        p = selectedcard.getPin()
+
+        if isinstance(selectedcard, CreditCard) and cardlim > buyPrice and p == pin:
+            price = cardlim - buyPrice
+            update_pickle_user(user, price)
+            t.append(selectedTicket)
+            print(selectedTicket)
+            buyWindow.showSelectedTicket(selectedTicket)
+            print("Card Limit: ", selectedcard.getBalance())
+            widget.setCurrentWidget(bookingWindow)
+        elif isinstance(selectedcard, DebitCard) and cardbal > buyPrice and p == pin:
+            price = cardbal - buyPrice
+            t.append(selectedTicket)
+            update_pickle_user(user, price)
+            print(selectedTicket)
+            buyWindow.showSelectedTicket(selectedTicket)
+            print("Card Balance: ", selectedcard.getBalance())
+            widget.setCurrentWidget(bookingWindow)
+        else:
+            buyWindow.Popup()
 
     buyWindow.ui.BuyTicket.clicked.connect(buy)
 
     def LoginToApp():
+        global NowLoginCustomer
         username = loginPage.ui.username_input.text()
         password = loginPage.ui.password_input.text()
-        LoginWindow().VerifyLogin(username, password)
-        widget.setCurrentWidget(bookingWindow)
+        NowLoginCustomer = LoginWindow().VerifyLogin(username, password)
+        if NowLoginCustomer == True:
+            return
+        else:
+            widget.setCurrentWidget(bookingWindow)
+
 
     loginPage.ui.loginButton.clicked.connect(LoginToApp)
+
+    def displayHistory():
+        user = NowLoginCustomer
+        historyWindow.showBookings(user)
+        widget.setCurrentWidget(historyWindow)
+
+    bookingWindow.ui.viewBookings.clicked.connect(displayHistory)
+
 
 # add user button
     def registerUser():
@@ -162,8 +195,6 @@ if __name__ == '__main__':
 
     registerPage.ui.addDebitCard.clicked.connect(registerDebit)
     registerPage.ui.addDebitCard.clicked.connect(information)
-
-#login to go to booking page
 
     app.exec_()
 

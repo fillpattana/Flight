@@ -12,10 +12,18 @@ class BuyTicketWindow(QWidget):
         self.ui = Ui_BuyWindow()
         self.ui.setupUi(self)
 
-    
+    def Popup(self):
+        popup = QErrorMessage()
+        popup.showMessage("Insufficient Amount of Money")
+        popup.exec_()
 
+    def showSelectedTicket(self, ticket):
+        qm = QMessageBox()
+        text = "YOUR TICKET\n\n" + ticket.__str__()
+        qm.setWindowTitle("Confirm Purchase")
+        qm.setText(text)
+        qm.setStandardButtons(QMessageBox.StandardButton.Yes)
+        x = qm.exec_()
 
-    def confirmPay(self):
-        pass
 
 

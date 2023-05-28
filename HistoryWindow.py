@@ -43,7 +43,7 @@ class Ui_HistoryPage(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label.setText(QCoreApplication.translate("Form", u"Your Bookings:", None))
-        self.BookingsLabel.setText(QCoreApplication.translate("Form", u"BOOKINGS PRINT HERE", None))
+        self.BookingsLabel.setText(QCoreApplication.translate("Form", u"", None))
         self.goBack.setText(QCoreApplication.translate("Form", u"goback", None))
         self.goNext.setText(QCoreApplication.translate("Form", u"gonext", None))
     # retranslateUi

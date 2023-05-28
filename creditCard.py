@@ -18,7 +18,7 @@ class CreditCard(Card):
     def getCredit(self):
         return self.credit
 
-    def getLimit(self):
+    def getBalance(self):
         return self.limit
 
     def setLimit(self, limit):
