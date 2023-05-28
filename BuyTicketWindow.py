@@ -49,6 +49,7 @@ class Ui_BuyWindow(object):
         self.enterPin = QLineEdit(Form)
         self.enterPin.setObjectName(u"enterPin")
         self.enterPin.setGeometry(QRect(30, 130, 331, 51))
+        self.enterPin.setEchoMode(QLineEdit.EchoMode.Password)
         font1 = QFont()
         font1.setPointSize(20)
         self.enterPin.setFont(font1)

@@ -32,10 +32,13 @@ class Ui_LoginPage(object):
         self.label_password.setObjectName(u"label_password")
         self.label_password.setGeometry(QRect(30, 90, 81, 41))
         self.label_password.setFont(font)
+
         self.password_input = QLineEdit(Form)
         self.password_input.setObjectName(u"password_input")
         self.password_input.setGeometry(QRect(110, 90, 371, 41))
+        self.password_input.setEchoMode(QLineEdit.EchoMode.Password)
         self.password_input.setFont(font)
+
         self.loginButton = QPushButton(Form)
         self.loginButton.setObjectName(u"loginButton")
         self.loginButton.setGeometry(QRect(160, 150, 211, 71))
